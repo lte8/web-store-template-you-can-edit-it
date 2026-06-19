@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAYF Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="scrollTo('home')"> SAYF Services</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+<li><a href="#products">Services</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="cart-btn" id="cartBtn">
+                🛒 <span id="cartCount">0</span>
+            </div>
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Parallax -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+<h1 class="hero-title">SAYF Services - Software Services</h1>
+            <div class="hero-buttons" style="display: none;">
+                <button class="btn-primary" onclick="scrollTo('products')">Shop Now</button>
+                <button class="btn-secondary" onclick="scrollTo('testimonials')">See Reviews</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Products -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2> <!-- unchanged -->
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <input type="text" id="searchInput" placeholder="Search services..." style="padding: 1rem 2rem; border: var(--border); border-radius: var(--radius); font-size: 1rem; width: 100%; max-width: 400px;">
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Dynamic products -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Customer Reviews</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                <div class="testimonial-content">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Amazing Discord bot, super fast delivery and perfect features!"</p>
+                        <h4>Alex Johnson</h4>
+                    </div>
+                </div>
+                <div class="testimonial">
+                <div class="testimonial-content">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Beautiful website design, professional and fast!"</p>
+                        <h4>Sarah Lee</h4>
+                    </div>
+                </div>
+                <div class="testimonial">
+                <div class="testimonial-content">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Best e-commerce store setup, exactly what I needed!"</p>
+                        <h4>Mike Chen</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Services Cart</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-footer">
+                <div class="cart-total">Total: <span id="cartTotal">0 DH</span></div>
+                <button class="btn-checkout" id="checkoutBtn">Complete Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Order Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="orderForm">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <input type="text" id="city" placeholder="City" required>
+                <input type="text" id="neighborhood" placeholder="Neighborhood" required>
+                <button type="submit" class="btn-submit">Send Order via Email</button>
+            </form>
+            <div id="orderMessage"></div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section" style="padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">About SAYF Services</h2>
+            <div class="hero-description">
+                <p>SAYF Services - Professional Software Services</p>
+                <p>Welcome to SAYF Services, your destination for Discord bots, custom websites, e-commerce stores, and Discord servers. High-quality development services at affordable prices.</p>
+                <p>Fast delivery, excellent support, and cutting-edge solutions for your digital needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div style="text-align: center; padding: 2.5rem 0;">
+                <p style="font-weight: 600; color: var(--black); font-size: 1.1rem; margin-bottom: 0.3rem;">
+                    All Rights Reserved © 2024
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

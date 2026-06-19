@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SAYF Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='index.html'"> SAYF Services</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+<li><a href="index.html#products">Services</a></li>
+                <li><a href="index.html#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="cart-btn" onclick="window.location.href='index.html'">
+                🛒 <span id="cartCount">0</span>
+            </div>
+            <button class="menu-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 class="contact-title">Contact Us</h1>
+            <p class="contact-subtitle">For orders and inquiries</p>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-instagram-btn">
+                    <a href="https://instagram.com/its___sayf__122" class="contact-btn instagram" target="_blank">
+                        Contact via Instagram 📸
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Order Form -->
+    <section class="contact-section alt-section">
+        <div class="container">
+            <h3 class="section-title mini">Quick Order</h3>
+            <form id="quickForm" class="quick-form">
+                <div class="form-group">
+                    <input type="text" id="qname" placeholder="Full Name *" required>
+                    <input type="tel" id="qphone" placeholder="Phone Number *" required>
+                </div>
+                <div class="form-group">
+<input type="text" id="qproduct" placeholder="Service / Details">
+                    <input type="text" id="qcity" placeholder="City / Neighborhood">
+                </div>
+                <textarea id="qmessage" placeholder="Order details or message..."></textarea>
+                <button type="submit" class="btn-submit full">📤 Send Order Now</button>
+                <p class="small-text" style="margin-top: 1rem;">Reply via WhatsApp within 1 hour ⏱️</p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div style="text-align: center; padding: 2.5rem 0;">
+                <p style="font-weight: 600; color: var(--black); font-size: 1.1rem; margin-bottom: 0.3rem;">
+                    All Rights Reserved © 2024
+                </p>
+<p style="font-weight: 500; color: #555; font-size: 1rem;">
+                    SAYF Services - Professional Software Services
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cart sync
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        document.getElementById('cartCount').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+        // Quick form WhatsApp
+        document.getElementById('quickForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('qname').value;
+            const phone = document.getElementById('qphone').value;
+            const product = document.getElementById('qproduct').value;
+            const city = document.getElementById('qcity').value;
+            const message = document.getElementById('qmessage').value;
+            
+            let whatsappText = `Quick Order 🛍️%0A%0A`;
+            whatsappText += `👤 ${name}%0A`;
+            whatsappText += `📞 ${phone}%0A`;
+            if (product) whatsappText += `📦 ${product}%0A`;
+            if (city) whatsappText += `📍 ${city}%0A`;
+            whatsappText += `%0A${message}`;
+            
+            window.open(`https://wa.me/212701526531?text=${whatsappText}`, '_blank');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
